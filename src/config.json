@@ -1,0 +1,10 @@
+{
+  "prefix" : ".",
+  "useMasterRole" : false,
+  "masterRoleName" : "Mute Master",
+  "reactionFeedbackMute" : "🇲",
+  "reactionFeedbackUnMute" : "🇺",
+  "reactionFeedbackFail" : "🥺",
+  "playVoiceWhenMute" : true,
+  "playVoiceWhenUnMute" : false
+}
