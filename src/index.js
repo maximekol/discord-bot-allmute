@@ -17,7 +17,6 @@ try  {
 
 // load config
 const config = require("./config.json");
-defaultBotVoice = config.defaultBotVoice
 
 // Get authentication data
 try {
@@ -26,6 +25,8 @@ try {
   console.log("Please create an auth.json like auth.json.example with a bot token or an email and password.\n"+e.stack); // send message for error - no token 
   process.exit(); 
 }
+
+var isMuted = false
 
 const client = new Discord.Client();
 
@@ -76,6 +77,19 @@ client.on("message", (message) => {
   }
 });
 
+client.on("voiceStateUpdate", (oldState, newState) => {
+  if (!newState.serverMute && isMuted && newState.member.voice && !newState.member.user.bot) {
+    console.log("New Real User Is Muted");
+    newState.member.voice.setMute(true);
+  }
+
+  if (oldState.channelID != null && newState.channelID == null && !newState.member.user.bot) {
+    console.log("User Leave Voice Channel")
+    // TODO unmute user for next voice chat
+  } 
+  
+});
+
 async function muteAll(args, message) {
   if (message.member.voice.channelID) {
     // Mute All real users
@@ -86,6 +100,9 @@ async function muteAll(args, message) {
         member.voice.setMute(true);         
       }
     }
+
+    // Set Flag muted
+    isMuted = true
     
     playMuteAudioMessage(message)
 
@@ -106,6 +123,10 @@ async function unmuteAll(args, message) {
         member.voice.setMute(false);         
       }
     }
+
+    // Set Flag muted
+    isMuted = false
+
   } else {
     console.log("User Has no Voice Channel");    
   }
