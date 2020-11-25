@@ -10,21 +10,21 @@
     "ffmpeg-static": "^4.2.7"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "node src/index.js"  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maximekol/discord-bot-scores.git"
+    "url": "git+https://github.com/maximekol/discord-bot-allmute"
   },
   "keywords": [
     "discord",
     "bot",
-    "game"
+    "mute", 
+    "voice"
   ],
   "author": "Maxime Kolly",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maximekol/discord-bot-scores/issues"
+    "url": "https://github.com/maximekol/discord-bot-allmute/issues"
   },
-  "homepage": "https://github.com/maximekol/discord-bot-scores#readme"
+  "homepage": "https://github.com/maximekol/discord-bot-allmute#readme"
 }
