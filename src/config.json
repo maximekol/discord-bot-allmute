@@ -6,5 +6,7 @@
   "reactionFeedbackUnMute" : "🇺",
   "reactionFeedbackFail" : "🥺",
   "playVoiceWhenMute" : true,
-  "playVoiceWhenUnMute" : false
+  "playVoiceWhenUnMute" : false,
+  "textMessageMute" : "Shut the fuck up !",
+  "textMessageUnMute" : "Now you can talk bitches !"
 }

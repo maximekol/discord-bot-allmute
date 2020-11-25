@@ -68,10 +68,12 @@ client.on("message", (message) => {
     if(cmd == "m") {
       muteAll(args, message)
       sendReactionFeedbackMute(message)
+      message.channel.send(config.textMessageMute);
       return
     } else if (cmd == "u"){
       unmuteAll(args, message)
       sendReactionFeedbackUnMute(message)
+      message.channel.send(config.textMessageUnMute);
       return
     }
   }
@@ -84,10 +86,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
   }
 
   if (oldState.channelID != null && newState.channelID == null && !newState.member.user.bot) {
-    console.log("User Leave Voice Channel")
+    console.log("User leave voice channel while being muted")
     // TODO unmute user for next voice chat
-  } 
-  
+  }
 });
 
 async function muteAll(args, message) {
