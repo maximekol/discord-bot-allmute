@@ -2,6 +2,7 @@
   "prefix" : ".",
   "useMasterRole" : false,
   "masterRoleName" : "Mute Master",
+  "useTeacherMode" : false,
   "reactionFeedbackMute" : "🇲",
   "reactionFeedbackUnMute" : "🇺",
   "reactionFeedbackFail" : "🥺",

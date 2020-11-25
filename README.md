@@ -2,7 +2,7 @@
 
 A bot for Discord servers to mute/unmute voice channels, self-hosted
 
-Can be very usefull when playing Among Us !
+Can be very usefull when playing Among Us or teaching a lesson to students !
 
 ---
 
@@ -70,7 +70,15 @@ With useMasterRole set to true, only the member with this role can mute/unmute t
 "masterRoleName" : "Mute Master",
 ```
 
-2. Play audio when mute/unmute
+2. Use Teacher Mode
+
+With teacher mode activated, all the members are muted except the one with MasterRole
+
+```bash
+  "useTeacherMode" : false, 
+```
+
+3. Play audio when mute/unmute
 Possibility to play a specific audio message when mute/unmute command is received 
 
 ```bash
